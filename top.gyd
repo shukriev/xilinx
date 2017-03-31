@@ -1,0 +1,54 @@
+Pin Freeze File:  version I.31
+
+2C256144 XC2C256-6-TQ144
+Clk S:PIN143
+D<0> S:PIN6
+D<1> S:PIN136
+D<2> S:PIN7
+D<3> S:PIN135
+FilterClk S:PIN32
+Load S:PIN134
+RESET S:PIN9
+LIGHT<0> S:PIN3
+LIGHT<1> S:PIN5
+LIGHT<2> S:PIN4
+LIGHT<3> S:PIN2
+LIGHT<4> S:PIN30
+LIGHT<5> S:PIN26
+LIGHT<6> S:PIN24
+LIGHT<7> S:PIN22
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 XLXI_1/FilterCount<9> XLXI_1/FilterCount<8> XLXI_1/FilterInPrev XLXI_1/FilterCount<14>
+		 XLXI_1/FilterCount<7> XLXI_1/FilterCount<13> XLXI_1/FilterCount<6> XLXI_1/FilterCount<5>
+		 XLXI_1/FilterCount<4> XLXI_1/FilterCount<3> XLXI_1/FilterCount<2> XLXI_1/FilterCount<12>
+		 XLXI_1/FilterCount<11> XLXI_1/FilterCount<10> XLXI_1/FilterCount<1> XLXI_1/FilterCount<0>
+		
+PARTITION FB2_1 LIGHT<3> XLXI_1/FilterCount<15> LIGHT<0> LIGHT<2>
+		 LIGHT<1> XLXN_1 XLXI_2/counter_2__or0000 XLXI_2/counter_0__or0000
+		 XLXI_2/counter_3__or0000 XLXI_2/counter_1__or0000 XLXI_2/counter<3>
+PARTITION FB2_14 XLXI_1/_xor0001 XLXI_1/_not000226 XLXI_2/counter<1>
+PARTITION FB3_13 XLXI_2/counter<2>
+PARTITION FB3_15 XLXI_2/counter<0>
+
+
+PARTITION FB5_6 LIGHT<4>
+
+
+PARTITION FB7_5 LIGHT<5>
+PARTITION FB7_11 LIGHT<6>
+PARTITION FB7_13 LIGHT<7>
+
+
+
+
+
+
+
+
+
+
+

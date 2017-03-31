@@ -1,0 +1,73 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK1: 1=FilterClk.p
+----------------- B l o c k 0 ------------------
+PLApt(29/56), Fanin(16/38), Clk(1/3), Bct(0/4), Pin(1/6), Mcell(16/16)
+PLApts[29/56] 25 26 14 24 15 27 16 28 17 29 18 30 19 31 20 32 21 33 9 34 10 35 11 36 12 37 13 38 () () () () 
+              () () () () () () () () () () () () () () () () () () () () () () () 23
+Fanins[16] FilterCount<0>.n FilterCount<10>.n FilterCount<11>.n FilterCount<12>.n FilterCount<13>.n 
+           FilterCount<14>.n FilterCount<1>.n FilterCount<2>.n FilterCount<3>.n FilterCount<4>.n 
+           FilterCount<5>.n FilterCount<6>.n FilterCount<7>.n FilterCount<8>.n FilterCount<9>.n _xor0001.n
+clk[1] FilterClk 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[17] [FilterInPrev,FilterIn(143)] [FilterCount<0>(160)] [FilterCount<1>(159)] [FilterCount<2>(155)]  
+           [FilterCount<3>(154)] [FilterCount<4>(153)] [FilterCount<5>(152)] [FilterCount<6>(151)]  
+           [FilterCount<7>(149)] [FilterCount<8>(146)] [FilterCount<9>(145)] [FilterCount<10>(158)]  
+           [FilterCount<11>(157)] [FilterCount<12>(156)] [FilterCount<13>(150)] [FilterCount<14>(148)] 
+Signal[17] [ 0: FilterCount<9>(145)  ][ 1: FilterCount<8>(146)  ][ 2: FilterInPrev(147) FilterIn(143)  ][ 3:  
+           FilterCount<14>(148) (142)  ][ 4: FilterCount<7>(149)  ][ 5: FilterCount<13>(150) (140)  ][ 6:  
+           FilterCount<6>(151)  ][ 7: FilterCount<5>(152)  ][ 8: FilterCount<4>(153)  ][ 9:  
+           FilterCount<3>(154)  ][ 10: FilterCount<2>(155)  ][ 11: FilterCount<12>(156) (139)  ][ 12:  
+           FilterCount<11>(157) (138)  ][ 13: FilterCount<10>(158) (137)  ][ 14: FilterCount<1>(159)  ][ 15:  
+           FilterCount<0>(160)  ]
+----------------- B l o c k 1 ------------------
+PLApt(11/56), Fanin(20/38), Clk(1/3), Bct(0/4), Pin(1/8), Mcell(4/16)
+PLApts[11/11] 0 22 39 2 3 4 5 6 7 8 40
+Fanins[20] FilterCount<0>.n FilterCount<10>.n FilterCount<11>.n FilterCount<12>.n FilterCount<13>.n 
+           FilterCount<14>.n FilterCount<15>.n FilterCount<1>.n FilterCount<2>.n FilterCount<3>.n 
+           FilterCount<4>.n FilterCount<5>.n FilterCount<6>.n FilterCount<7>.n FilterCount<8>.n 
+           FilterCount<9>.n FilterInPrev.n _not000226.n _xor0001.n FilterIn.p
+clk[1] FilterClk 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 4] [FilterOut(161),FilterOut(2)] [FilterCount<15>(176)] [_not000226(171)] [_xor0001(170)] 
+Signal[ 4] [ 0: FilterOut(161) FilterOut(2)  ][ 1:  ][ 2: (3)  ][ 3: (4)  ][ 4: (5)  ][ 5:  ][ 6:  ][ 7:  ] 
+           [ 8:  ][ 9: _xor0001(170)  ][ 10: _not000226(171)  ][ 11: (6)  ][ 12: (7)  ][ 13: (9)  ][ 14:  
+           (10)  ][ 15: FilterCount<15>(176)  ]
+----------------- B l o c k 2 ------------------
+----------------- B l o c k 3 ------------------
+----------------- B l o c k 4 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(1/5), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 1] [FilterClk(32)] 
+Signal[ 1] [ 0:  ][ 1: (33)  ][ 2:  ][ 3: FilterClk(32)  ][ 4: (31)  ][ 5: (30)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  
+            ][ 10:  ][ 11:  ][ 12:  ][ 13: (28)  ][ 14:  ][ 15:  ]
+----------------- B l o c k 5 ------------------
+----------------- B l o c k 6 ------------------
+----------------- B l o c k 7 ------------------
+----------------- B l o c k 8 ------------------
+----------------- B l o c k 9 ------------------
+----------------- B l o c k 10 ------------------
+----------------- B l o c k 11 ------------------
+----------------- B l o c k 12 ------------------
+----------------- B l o c k 13 ------------------
+----------------- B l o c k 14 ------------------
+----------------- B l o c k 15 ------------------

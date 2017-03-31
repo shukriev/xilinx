@@ -1,0 +1,91 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2003 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 8.2i
+//  \   \         Application : ISE
+//  /   /         Filename : Test Bench.ant
+// /___/   /\     Timestamp : Fri Mar 31 17:02:57 2017
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: Test Bench
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module Test Bench;
+    reg Clk = 1'b0;
+    reg [3:0] D = 4'b0000;
+    reg FilterClk = 1'b0;
+    reg Load = 1'b0;
+    reg RESET = 1'b0;
+    wire [7:0] LIGHT;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for Clk
+    begin
+        #OFFSET;
+        forever
+        begin
+            Clk = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) Clk = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    top UUT (
+        .Clk(Clk),
+        .D(D),
+        .FilterClk(FilterClk),
+        .Load(Load),
+        .RESET(RESET),
+        .LIGHT(LIGHT));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin    // Annotation process for clock Clk
+        #0;
+        ANNOTATE_LIGHT;
+        #OFFSET;
+        forever begin
+            #115;
+            ANNOTATE_LIGHT;
+            #85;
+        end
+    end
+
+    initial begin  // Open the annotations file...
+        TX_FILE = $fopen("C:\\Xilinx\\Shukri_Kursova_143610\\Test Bench.ano");
+        #1200 // Final time:  1200 ns
+        $display("Success! Annotation Simulation Complete.");
+        $fdisplay(TX_FILE, "Total[%d]", TX_ERROR);
+        $fclose(TX_FILE);
+        $finish;
+    end
+
+    initial begin
+        // -------------  Current Time:  85ns
+        #85;
+        Load = 1'b1;
+        // -------------------------------------
+    end
+
+    task ANNOTATE_LIGHT;
+        #0 begin
+            $fdisplay(TX_FILE, "Annotate[%d,LIGHT,%b]", $time, LIGHT);
+            $fflush(TX_FILE);
+            TX_ERROR = TX_ERROR + 1;
+        end
+    endtask
+
+endmodule
+

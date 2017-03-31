@@ -1,0 +1,46 @@
+sch2verilog -intstyle ise -family xbr   -w "C:/Xilinx/Shukri_Kursova_143610/top.sch" top.vf
+sch2verilog -intstyle ise -family xbr   -w "C:/Xilinx/Shukri_Kursova_143610/top.sch" top.vf
+xst -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -ifn top.xst -ofn top.syr
+ngdbuild -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -dd _ngo -i -p xbr "top.ngc" top.ngd
+cpldfit -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -inreg on -blkfanin 38 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 top.ngd
+XSLTProcess -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" top_build.xml
+tsim -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise top top.nga
+taengine -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -f top -w --format html1 -l C:/Xilinx/Shukri_Kursova_143610/top_html/tim/timing_report.htm
+hprep6 -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -s IEEE1149 -i top
+sch2verilog -intstyle ise -family xbr   -w "C:/Xilinx/Shukri_Kursova_143610/top.sch" top.vf
+xst -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -ifn top.xst -ofn top.syr
+ngdbuild -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -dd _ngo -i -p xbr "top.ngc" top.ngd
+cpldfit -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -inreg on -blkfanin 38 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 top.ngd
+XSLTProcess -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" top_build.xml
+tsim -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise top top.nga
+taengine -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -f top -w --format html1 -l C:/Xilinx/Shukri_Kursova_143610/top_html/tim/timing_report.htm
+hprep6 -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -s IEEE1149 -i top
+ibiswriter -intstyle ise top.pnx top.ibs
+netgen -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -sdf_anno true -sdf_path netgen/fit -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim top.nga top_timesim.v
+pin2ucf top.gyd -o top_locked.ucf -r top.lck
+ngdbuild -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -dd _ngo -uc "top.ucf" -p xbr "top.ngc" top.ngd
+ngdbuild -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -dd _ngo -uc "top.ucf" -p xbr "top.ngc" top.ngd
+cpldfit -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -inreg on -blkfanin 38 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 top.ngd
+XSLTProcess -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" top_build.xml
+tsim -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise top top.nga
+taengine -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -f top -w --format html1 -l C:/Xilinx/Shukri_Kursova_143610/top_html/tim/timing_report.htm
+hprep6 -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -s IEEE1149 -i top
+netgen -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -sdf_anno true -sdf_path netgen/fit -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim top.nga top_timesim.v
+ibiswriter -intstyle ise top.pnx top.ibs
+pin2ucf top.gyd -o top.ucf -r top.lck
+sch2verilog -intstyle ise -family xbr   -w "C:/Xilinx/Shukri_Kursova_143610/top.sch" top.vf
+xst -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -ifn top.xst -ofn top.syr
+ngdbuild -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -dd _ngo -uc "top.ucf" -p xbr "top.ngc" top.ngd
+cpldfit -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -inreg on -blkfanin 38 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 top.ngd
+XSLTProcess -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" top_build.xml
+tsim -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise top top.nga
+taengine -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -f top -w --format html1 -l C:/Xilinx/Shukri_Kursova_143610/top_html/tim/timing_report.htm
+hprep6 -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -s IEEE1149 -i top
+sch2verilog -intstyle ise -family xbr   -w "C:/Xilinx/Shukri_Kursova_143610/top.sch" top.vf
+xst -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -ifn top.xst -ofn top.syr
+ngdbuild -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -dd _ngo -uc "top.ucf" -p xbr "top.ngc" top.ngd
+cpldfit -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -inreg on -blkfanin 38 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 top.ngd
+XSLTProcess -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" top_build.xml
+tsim -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise top top.nga
+taengine -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -intstyle ise -f top -w --format html1 -l C:/Xilinx/Shukri_Kursova_143610/top_html/tim/timing_report.htm
+hprep6 -ise "C:/Xilinx/Shukri_Kursova_143610/Shukri_Kursova_143610.ise" -s IEEE1149 -i top

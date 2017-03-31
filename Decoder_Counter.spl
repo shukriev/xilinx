@@ -1,0 +1,8 @@
+[Inputs]
+Reset
+Clk
+Load
+=D[3:0]=
+[Outputs]
+=LIGHT[7:0]=
+[BiDir]

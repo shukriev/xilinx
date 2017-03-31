@@ -1,0 +1,263 @@
+MDF Database:  version 1.0
+MDF_INFO | Filter | XC2C256-6-TQ144
+MACROCELL | 1 | 0 | FilterOut_MC
+ATTRIBUTES | 8684354 | 0
+INPUTS | 8 | FilterIn  | FilterCount<11>  | _xor0001  | FilterCount<12>  | FilterCount<13>  | FilterCount<14>  | FilterCount<15>  | _not000226
+INPUTMC | 7 | 0 | 12 | 1 | 9 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTP | 1 | 218
+EQ | 4 | 
+   FilterOut := FilterIn;	// (1 pt, 1 inp)
+   FilterOut.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+    FilterOut.CE = !FilterCount<11> & !_xor0001 & !FilterCount<12> & 
+	!FilterCount<13> & !FilterCount<14> & !FilterCount<15> & !_not000226;	// (1 pt, 7 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 12 | FilterCount<11>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 6 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 0
+INPUTS | 13 | FilterCount<11>  | _xor0001  | FilterCount<0>  | FilterCount<10>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>
+INPUTMC | 13 | 0 | 12 | 1 | 9 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0
+EQ | 6 | 
+   FilterCount<11>.T := FilterCount<11> & _xor0001
+	# !_xor0001 & FilterCount<0> & FilterCount<10> & 
+	FilterCount<1> & FilterCount<2> & FilterCount<3> & FilterCount<4> & 
+	FilterCount<5> & FilterCount<6> & FilterCount<7> & FilterCount<8> & 
+	FilterCount<9>;	// (2 pt, 13 inp)
+   FilterCount<11>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 1 | 9 | _xor0001_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 17 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 0
+INPUTS | 2 | FilterIn  | FilterInPrev
+INPUTMC | 1 | 0 | 2
+INPUTP | 1 | 218
+EQ | 2 | 
+   _xor0001 = FilterIn & !FilterInPrev
+	# !FilterIn & FilterInPrev;	// (2 pt, 2 inp)
+
+MACROCELL | 0 | 2 | FilterInPrev_MC
+ATTRIBUTES | 2155905028 | 4
+OUTPUTMC | 1 | 1 | 9
+INPUTS | 0 
+EQ | 4 | 
+   
+// Direct Input Register
+FilterInPrev := FilterIn;	// (0 pt, 0 inp)
+   FilterInPrev.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 15 | FilterCount<0>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 17 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 2 | _xor0001  | FilterCount<0>
+INPUTMC | 2 | 1 | 9 | 0 | 15
+EQ | 2 | 
+   FilterCount<0> := !_xor0001 & !FilterCount<0>;	// (1 pt, 2 inp)
+   FilterCount<0>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 13 | FilterCount<10>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 7 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 12 | _xor0001  | FilterCount<10>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>
+INPUTMC | 12 | 1 | 9 | 0 | 13 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0
+EQ | 5 | 
+   FilterCount<10>.T := _xor0001 & FilterCount<10>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3> & FilterCount<4> & FilterCount<5> & 
+	FilterCount<6> & FilterCount<7> & FilterCount<8> & FilterCount<9>;	// (2 pt, 12 inp)
+   FilterCount<10>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 14 | FilterCount<1>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 16 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 3 | _xor0001  | FilterCount<0>  | FilterCount<1>
+INPUTMC | 3 | 1 | 9 | 0 | 15 | 0 | 14
+EQ | 3 | 
+   FilterCount<1> := !_xor0001 & FilterCount<0> & !FilterCount<1>
+	# !_xor0001 & !FilterCount<0> & FilterCount<1>;	// (2 pt, 3 inp)
+   FilterCount<1>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 10 | FilterCount<2>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 15 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 4 | _xor0001  | FilterCount<2>  | FilterCount<0>  | FilterCount<1>
+INPUTMC | 4 | 1 | 9 | 0 | 10 | 0 | 15 | 0 | 14
+EQ | 3 | 
+   FilterCount<2>.T := _xor0001 & FilterCount<2>
+	# !_xor0001 & FilterCount<0> & FilterCount<1>;	// (2 pt, 4 inp)
+   FilterCount<2>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 9 | FilterCount<3>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 14 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 5 | _xor0001  | FilterCount<3>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>
+INPUTMC | 5 | 1 | 9 | 0 | 9 | 0 | 15 | 0 | 14 | 0 | 10
+EQ | 4 | 
+   FilterCount<3>.T := _xor0001 & FilterCount<3>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2>;	// (2 pt, 5 inp)
+   FilterCount<3>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 8 | FilterCount<4>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 13 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 6 | _xor0001  | FilterCount<4>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>
+INPUTMC | 6 | 1 | 9 | 0 | 8 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9
+EQ | 4 | 
+   FilterCount<4>.T := _xor0001 & FilterCount<4>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3>;	// (2 pt, 6 inp)
+   FilterCount<4>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 7 | FilterCount<5>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 12 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 7 | _xor0001  | FilterCount<5>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>
+INPUTMC | 7 | 1 | 9 | 0 | 7 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8
+EQ | 4 | 
+   FilterCount<5>.T := _xor0001 & FilterCount<5>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3> & FilterCount<4>;	// (2 pt, 7 inp)
+   FilterCount<5>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 6 | FilterCount<6>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 11 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 8 | _xor0001  | FilterCount<6>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>
+INPUTMC | 8 | 1 | 9 | 0 | 6 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7
+EQ | 4 | 
+   FilterCount<6>.T := _xor0001 & FilterCount<6>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3> & FilterCount<4> & FilterCount<5>;	// (2 pt, 8 inp)
+   FilterCount<6>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 4 | FilterCount<7>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 10 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 9 | _xor0001  | FilterCount<7>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>
+INPUTMC | 9 | 1 | 9 | 0 | 4 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6
+EQ | 5 | 
+   FilterCount<7>.T := _xor0001 & FilterCount<7>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3> & FilterCount<4> & FilterCount<5> & 
+	FilterCount<6>;	// (2 pt, 9 inp)
+   FilterCount<7>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 1 | FilterCount<8>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 9 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 10 | _xor0001  | FilterCount<8>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>
+INPUTMC | 10 | 1 | 9 | 0 | 1 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4
+EQ | 5 | 
+   FilterCount<8>.T := _xor0001 & FilterCount<8>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3> & FilterCount<4> & FilterCount<5> & 
+	FilterCount<6> & FilterCount<7>;	// (2 pt, 10 inp)
+   FilterCount<8>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 0 | FilterCount<9>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 10
+INPUTS | 11 | _xor0001  | FilterCount<9>  | FilterCount<0>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>
+INPUTMC | 11 | 1 | 9 | 0 | 0 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1
+EQ | 5 | 
+   FilterCount<9>.T := _xor0001 & FilterCount<9>
+	# !_xor0001 & FilterCount<0> & FilterCount<1> & 
+	FilterCount<2> & FilterCount<3> & FilterCount<4> & FilterCount<5> & 
+	FilterCount<6> & FilterCount<7> & FilterCount<8>;	// (2 pt, 11 inp)
+   FilterCount<9>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 11 | FilterCount<12>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 5 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 0
+INPUTS | 14 | _xor0001  | FilterCount<12>  | FilterCount<11>  | FilterCount<0>  | FilterCount<10>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>
+INPUTMC | 14 | 1 | 9 | 0 | 11 | 0 | 12 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0
+EQ | 6 | 
+   FilterCount<12>.T := _xor0001 & FilterCount<12>
+	# FilterCount<11> & !_xor0001 & FilterCount<0> & 
+	FilterCount<10> & FilterCount<1> & FilterCount<2> & FilterCount<3> & 
+	FilterCount<4> & FilterCount<5> & FilterCount<6> & FilterCount<7> & 
+	FilterCount<8> & FilterCount<9>;	// (2 pt, 14 inp)
+   FilterCount<12>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 5 | FilterCount<13>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 4 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 0
+INPUTS | 15 | _xor0001  | FilterCount<13>  | FilterCount<11>  | FilterCount<0>  | FilterCount<10>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>  | FilterCount<12>
+INPUTMC | 15 | 1 | 9 | 0 | 5 | 0 | 12 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 11
+EQ | 6 | 
+   FilterCount<13>.T := _xor0001 & FilterCount<13>
+	# FilterCount<11> & !_xor0001 & FilterCount<0> & 
+	FilterCount<10> & FilterCount<1> & FilterCount<2> & FilterCount<3> & 
+	FilterCount<4> & FilterCount<5> & FilterCount<6> & FilterCount<7> & 
+	FilterCount<8> & FilterCount<9> & FilterCount<12>;	// (2 pt, 15 inp)
+   FilterCount<13>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 0 | 3 | FilterCount<14>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 3 | 0 | 3 | 1 | 15 | 1 | 0
+INPUTS | 16 | _xor0001  | FilterCount<14>  | FilterCount<11>  | FilterCount<0>  | FilterCount<10>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>  | FilterCount<12>  | FilterCount<13>
+INPUTMC | 16 | 1 | 9 | 0 | 3 | 0 | 12 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 11 | 0 | 5
+EQ | 7 | 
+   FilterCount<14>.T := _xor0001 & FilterCount<14>
+	# FilterCount<11> & !_xor0001 & FilterCount<0> & 
+	FilterCount<10> & FilterCount<1> & FilterCount<2> & FilterCount<3> & 
+	FilterCount<4> & FilterCount<5> & FilterCount<6> & FilterCount<7> & 
+	FilterCount<8> & FilterCount<9> & FilterCount<12> & 
+	FilterCount<13>;	// (2 pt, 16 inp)
+   FilterCount<14>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 1 | 15 | FilterCount<15>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 2 | 1 | 15 | 1 | 0
+INPUTS | 17 | _xor0001  | FilterCount<15>  | FilterCount<11>  | FilterCount<0>  | FilterCount<10>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>  | FilterCount<4>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>  | FilterCount<12>  | FilterCount<13>  | FilterCount<14>
+INPUTMC | 17 | 1 | 9 | 1 | 15 | 0 | 12 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 11 | 0 | 5 | 0 | 3
+EQ | 7 | 
+   FilterCount<15>.T := _xor0001 & FilterCount<15>
+	# FilterCount<11> & !_xor0001 & FilterCount<0> & 
+	FilterCount<10> & FilterCount<1> & FilterCount<2> & FilterCount<3> & 
+	FilterCount<4> & FilterCount<5> & FilterCount<6> & FilterCount<7> & 
+	FilterCount<8> & FilterCount<9> & FilterCount<12> & 
+	FilterCount<13> & FilterCount<14>;	// (2 pt, 17 inp)
+   FilterCount<15>.CLK  =  FilterClk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | FilterClk
+
+MACROCELL | 1 | 10 | _not000226_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 1 | 0
+INPUTS | 11 | FilterCount<10>  | FilterCount<5>  | FilterCount<6>  | FilterCount<7>  | FilterCount<8>  | FilterCount<9>  | FilterCount<0>  | FilterCount<4>  | FilterCount<1>  | FilterCount<2>  | FilterCount<3>
+INPUTMC | 11 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 15 | 0 | 8 | 0 | 14 | 0 | 10 | 0 | 9
+EQ | 14 | 
+   _not000226 = FilterCount<10> & FilterCount<5> & 
+	FilterCount<6> & FilterCount<7> & FilterCount<8> & FilterCount<9>
+	# FilterCount<0> & FilterCount<10> & 
+	FilterCount<4> & FilterCount<6> & FilterCount<7> & FilterCount<8> & 
+	FilterCount<9>
+	# FilterCount<10> & FilterCount<1> & 
+	FilterCount<4> & FilterCount<6> & FilterCount<7> & FilterCount<8> & 
+	FilterCount<9>
+	# FilterCount<10> & FilterCount<2> & 
+	FilterCount<4> & FilterCount<6> & FilterCount<7> & FilterCount<8> & 
+	FilterCount<9>
+	# FilterCount<10> & FilterCount<3> & 
+	FilterCount<4> & FilterCount<6> & FilterCount<7> & FilterCount<8> & 
+	FilterCount<9>;	// (5 pt, 11 inp)
+
+PIN | FilterClk | 8192 | 16 | LVCMOS18 | 50 | 18 | 0 | 2 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 15 | 1 | 0
+PIN | FilterIn | 64 | 16 | LVCMOS18 | 218 | 3 | 1 | 0 | 1 | 9 | 0 | 2
+PIN | FilterOut | 536871040 | 0 | LVCMOS18 | 1

@@ -1,0 +1,34 @@
+Pin Freeze File:  version I.31
+
+2C256144 XC2C256-6-TQ144
+FilterClk S:PIN32
+FilterIn S:PIN143
+FilterOut S:PIN2
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 FilterCount<9> FilterCount<8> FilterInPrev FilterCount<14>
+		 FilterCount<7> FilterCount<13> FilterCount<6> FilterCount<5>
+		 FilterCount<4> FilterCount<3> FilterCount<2> FilterCount<12>
+		 FilterCount<11> FilterCount<10> FilterCount<1> FilterCount<0>
+		
+PARTITION FB2_1 FilterOut
+PARTITION FB2_10 _xor0001 _not000226
+PARTITION FB2_16 FilterCount<15>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

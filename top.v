@@ -1,0 +1,47 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 8.2i
+//  \   \         Application : sch2verilog
+//  /   /         Filename : top.vf
+// /___/   /\     Timestamp : 03/31/2017 17:07:05
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: C:\Xilinx\bin\nt\sch2verilog.exe -intstyle ise -family xbr -w C:/Xilinx/Shukri_Kursova_143610/top.sch top.vf
+//Design Name: top
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module top(Clk, 
+           D, 
+           FilterClk, 
+           Load, 
+           RESET, 
+           LIGHT);
+
+    input Clk;
+    input [3:0] D;
+    input FilterClk;
+    input Load;
+    input RESET;
+   output [7:0] LIGHT;
+   
+   wire XLXN_1;
+   
+   Filter XLXI_1 (.FilterClk(FilterClk), 
+                  .FilterIn(Clk), 
+                  .FilterOut(XLXN_1));
+   Decoder_Counter XLXI_2 (.Clk(XLXN_1), 
+                           .D(D[3:0]), 
+                           .Load(Load), 
+                           .Reset(RESET), 
+                           .LIGHT(LIGHT[7:0]));
+endmodule

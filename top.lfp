@@ -1,0 +1,5 @@
+# begin LFP file C:\Xilinx\Shukri_Kursova_143610\top.lfp
+designfile top.v
+parttype xc2c256-tq144-6
+bus_delimiter 0;
+set_busdelim_onsave 1;

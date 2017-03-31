@@ -1,0 +1,90 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2003 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 8.2i
+//  \   \         Application : ISE
+//  /   /         Filename : Test Bench.tfw
+// /___/   /\     Timestamp : Fri Mar 31 17:02:57 2017
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: Test Bench
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module Test Bench;
+    reg Clk = 1'b0;
+    reg [3:0] D = 4'b0000;
+    reg FilterClk = 1'b0;
+    reg Load = 1'b0;
+    reg RESET = 1'b0;
+    wire [7:0] LIGHT;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for Clk
+    begin
+        #OFFSET;
+        forever
+        begin
+            Clk = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) Clk = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    top UUT (
+        .Clk(Clk),
+        .D(D),
+        .FilterClk(FilterClk),
+        .Load(Load),
+        .RESET(RESET),
+        .LIGHT(LIGHT));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin  // Open the results file...
+        TX_FILE = $fopen("results.txt");
+        #1200 // Final time:  1200 ns
+        if (TX_ERROR == 0) begin
+            $display("No errors or warnings.");
+            $fdisplay(TX_FILE, "No errors or warnings.");
+        end else begin
+            $display("%d errors found in simulation.", TX_ERROR);
+            $fdisplay(TX_FILE, "%d errors found in simulation.", TX_ERROR);
+        end
+        $fclose(TX_FILE);
+        $stop;
+    end
+
+    initial begin
+        // -------------  Current Time:  85ns
+        #85;
+        Load = 1'b1;
+        // -------------------------------------
+    end
+
+    task CHECK_LIGHT;
+        input [7:0] NEXT_LIGHT;
+
+        #0 begin
+            if (NEXT_LIGHT !== LIGHT) begin
+                $display("Error at time=%dns LIGHT=%b, expected=%b", $time, LIGHT, NEXT_LIGHT);
+                $fdisplay(TX_FILE, "Error at time=%dns LIGHT=%b, expected=%b", $time, LIGHT, NEXT_LIGHT);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+
+endmodule
+

@@ -1,0 +1,22 @@
+
+#PINLOCK_BEGIN
+
+#Fri Mar 31 17:08:06 2017
+
+NET "Clk"            LOC =  "S:PIN143";
+NET "D<0>"           LOC =  "S:PIN9";
+NET "D<1>"           LOC =  "S:PIN134";
+NET "D<2>"           LOC =  "S:PIN10";
+NET "D<3>"           LOC =  "S:PIN133";
+NET "FilterClk"      LOC =  "S:PIN32";
+NET "Load"           LOC =  "S:PIN132";
+NET "RESET"          LOC =  "S:PIN142";
+NET "LIGHT<0>"       LOC =  "S:PIN4";
+NET "LIGHT<1>"       LOC =  "S:PIN6";
+NET "LIGHT<2>"       LOC =  "S:PIN7";
+NET "LIGHT<3>"       LOC =  "S:PIN3";
+NET "LIGHT<4>"       LOC =  "S:PIN136";
+NET "LIGHT<5>"       LOC =  "S:PIN5";
+NET "LIGHT<6>"       LOC =  "S:PIN135";
+NET "LIGHT<7>"       LOC =  "S:PIN2";
+#PINLOCK_END

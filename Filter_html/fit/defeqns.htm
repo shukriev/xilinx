@@ -1,0 +1,140 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+FDCPE_FilterCount0: FDCPE port map (FilterCount(0),FilterCount_D(0),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_D(0) <= (NOT _xor0001 AND NOT FilterCount(0));
+</td></tr><tr><td>
+FDCPE_FilterCount1: FDCPE port map (FilterCount(1),FilterCount_D(1),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_D(1) <= ((NOT _xor0001 AND FilterCount(0) AND NOT FilterCount(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND NOT FilterCount(0) AND FilterCount(1)));
+</td></tr><tr><td>
+FTCPE_FilterCount2: FTCPE port map (FilterCount(2),FilterCount_T(2),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(2) <= ((_xor0001 AND FilterCount(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1)));
+</td></tr><tr><td>
+FTCPE_FilterCount3: FTCPE port map (FilterCount(3),FilterCount_T(3),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(3) <= ((_xor0001 AND FilterCount(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2)));
+</td></tr><tr><td>
+FTCPE_FilterCount4: FTCPE port map (FilterCount(4),FilterCount_T(4),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(4) <= ((_xor0001 AND FilterCount(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3)));
+</td></tr><tr><td>
+FTCPE_FilterCount5: FTCPE port map (FilterCount(5),FilterCount_T(5),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(5) <= ((_xor0001 AND FilterCount(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3) AND FilterCount(4)));
+</td></tr><tr><td>
+FTCPE_FilterCount6: FTCPE port map (FilterCount(6),FilterCount_T(6),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(6) <= ((_xor0001 AND FilterCount(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3) AND FilterCount(4) AND FilterCount(5)));
+</td></tr><tr><td>
+FTCPE_FilterCount7: FTCPE port map (FilterCount(7),FilterCount_T(7),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(7) <= ((_xor0001 AND FilterCount(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3) AND FilterCount(4) AND FilterCount(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(6)));
+</td></tr><tr><td>
+FTCPE_FilterCount8: FTCPE port map (FilterCount(8),FilterCount_T(8),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(8) <= ((_xor0001 AND FilterCount(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3) AND FilterCount(4) AND FilterCount(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(6) AND FilterCount(7)));
+</td></tr><tr><td>
+FTCPE_FilterCount9: FTCPE port map (FilterCount(9),FilterCount_T(9),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(9) <= ((_xor0001 AND FilterCount(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3) AND FilterCount(4) AND FilterCount(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(6) AND FilterCount(7) AND FilterCount(8)));
+</td></tr><tr><td>
+FTCPE_FilterCount10: FTCPE port map (FilterCount(10),FilterCount_T(10),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(10) <= ((_xor0001 AND FilterCount(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(2) AND FilterCount(3) AND FilterCount(4) AND FilterCount(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND FilterCount(9)));
+</td></tr><tr><td>
+FTCPE_FilterCount11: FTCPE port map (FilterCount(11),FilterCount_T(11),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(11) <= ((FilterCount(11) AND _xor0001)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT _xor0001 AND FilterCount(0) AND FilterCount(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(1) AND FilterCount(2) AND FilterCount(3) AND FilterCount(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(5) AND FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(9)));
+</td></tr><tr><td>
+FTCPE_FilterCount12: FTCPE port map (FilterCount(12),FilterCount_T(12),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(12) <= ((_xor0001 AND FilterCount(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(11) AND NOT _xor0001 AND FilterCount(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(10) AND FilterCount(1) AND FilterCount(2) AND FilterCount(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(5) AND FilterCount(6) AND FilterCount(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(8) AND FilterCount(9)));
+</td></tr><tr><td>
+FTCPE_FilterCount13: FTCPE port map (FilterCount(13),FilterCount_T(13),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(13) <= ((_xor0001 AND FilterCount(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(11) AND NOT _xor0001 AND FilterCount(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(10) AND FilterCount(1) AND FilterCount(2) AND FilterCount(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(5) AND FilterCount(6) AND FilterCount(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(8) AND FilterCount(9) AND FilterCount(12)));
+</td></tr><tr><td>
+FTCPE_FilterCount14: FTCPE port map (FilterCount(14),FilterCount_T(14),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(14) <= ((_xor0001 AND FilterCount(14))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(11) AND NOT _xor0001 AND FilterCount(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(10) AND FilterCount(1) AND FilterCount(2) AND FilterCount(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(5) AND FilterCount(6) AND FilterCount(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(8) AND FilterCount(9) AND FilterCount(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(13)));
+</td></tr><tr><td>
+FTCPE_FilterCount15: FTCPE port map (FilterCount(15),FilterCount_T(15),FilterClk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterCount_T(15) <= ((_xor0001 AND FilterCount(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(11) AND NOT _xor0001 AND FilterCount(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(10) AND FilterCount(1) AND FilterCount(2) AND FilterCount(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(5) AND FilterCount(6) AND FilterCount(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(8) AND FilterCount(9) AND FilterCount(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(13) AND FilterCount(14)));
+</td></tr><tr><td>
+FDCPE_FilterInPrev: FDCPE port map (FilterInPrev,FilterIn,FilterClk,'0','0','1');
+</td></tr><tr><td>
+FDCPE_FilterOut: FDCPE port map (FilterOut,FilterIn,FilterClk,'0','0',FilterOut_CE);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterOut_CE <= (NOT FilterCount(11) AND NOT _xor0001 AND NOT FilterCount(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT FilterCount(13) AND NOT FilterCount(14) AND NOT FilterCount(15) AND NOT _not000226);
+</td></tr><tr><td>
+</td></tr><tr><td>
+_not000226 <= ((FilterCount(10) AND FilterCount(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND FilterCount(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(0) AND FilterCount(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(10) AND FilterCount(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(10) AND FilterCount(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FilterCount(10) AND FilterCount(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(4) AND FilterCount(6) AND FilterCount(7) AND FilterCount(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	FilterCount(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+_xor0001 <= ((FilterIn AND NOT FilterInPrev)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FilterIn AND FilterInPrev));
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

@@ -1,0 +1,471 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="paths.js"></script><script src="eqns.js"></script><script>
+      var design = "top";
+      var device = "XC2C256";
+      signals = new Array("LIGHT0_SPECSIG","LIGHT1_SPECSIG","LIGHT2_SPECSIG","LIGHT3_SPECSIG","LIGHT4_SPECSIG","LIGHT5_SPECSIG","LIGHT6_SPECSIG","LIGHT7_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount11_SPECSIG","XLXI_1FilterCount12_SPECSIG","XLXI_1FilterCount13_SPECSIG","XLXI_1FilterCount14_SPECSIG","XLXI_1FilterCount15_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG","XLXI_1FilterInPrev_SPECSIG","XLXI_1_not000226_SPECSIG","XLXI_1_xor0001_SPECSIG","XLXI_2counter0_SPECSIG","XLXI_2counter1_SPECSIG","XLXI_2counter2_SPECSIG","XLXI_2counter3_SPECSIG","XLXI_2counter_0__or0000_SPECSIG","XLXI_2counter_1__or0000_SPECSIG","XLXI_2counter_2__or0000_SPECSIG","XLXI_2counter_3__or0000_SPECSIG","XLXN_1");
+      sigNegs = new Array("OFF","ON","ON","ON","ON","OFF","OFF","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF");
+      sigTypes = new Array("","","","","","","","","DFF","TFF","TFF","TFF","TFF","TFF","TFF","DFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","DFFS_SPECSIG","","","DFF","DFF","TFF","TFF","","","","","DEFF");
+
+      
+        specSig["D0_SPECSIG"]=new Array("D<0>");
+      
+        specSig["D1_SPECSIG"]=new Array("D<1>");
+      
+        specSig["D2_SPECSIG"]=new Array("D<2>");
+      
+        specSig["D3_SPECSIG"]=new Array("D<3>");
+      
+        specSig["b_SPECSIG"]=new Array("(b)");
+      
+        specSig["XLXI_1FilterCount14_SPECSIG"]=new Array("XLXI_1/FilterCount<14>");
+      
+        specSig["XLXI_1FilterCount13_SPECSIG"]=new Array("XLXI_1/FilterCount<13>");
+      
+        specSig["XLXI_1FilterCount12_SPECSIG"]=new Array("XLXI_1/FilterCount<12>");
+      
+        specSig["XLXI_1FilterCount11_SPECSIG"]=new Array("XLXI_1/FilterCount<11>");
+      
+        specSig["XLXI_1FilterCount10_SPECSIG"]=new Array("XLXI_1/FilterCount<10>");
+      
+        specSig["LIGHT3_SPECSIG"]=new Array("LIGHT<3>");
+      
+        specSig["LIGHT0_SPECSIG"]=new Array("LIGHT<0>");
+      
+        specSig["LIGHT2_SPECSIG"]=new Array("LIGHT<2>");
+      
+        specSig["LIGHT1_SPECSIG"]=new Array("LIGHT<1>");
+      
+        specSig["XLXI_1_not000226_SPECSIG"]=new Array("XLXI_1/_not000226");
+      
+        specSig["LIGHT4_SPECSIG"]=new Array("LIGHT<4>");
+      
+        specSig["LIGHT5_SPECSIG"]=new Array("LIGHT<5>");
+      
+        specSig["LIGHT6_SPECSIG"]=new Array("LIGHT<6>");
+      
+        specSig["LIGHT7_SPECSIG"]=new Array("LIGHT<7>");
+      
+        specSig["XLXI_1FilterCount9_SPECSIG"]=new Array("XLXI_1/FilterCount<9>");
+      
+        specSig["XLXI_1FilterCount8_SPECSIG"]=new Array("XLXI_1/FilterCount<8>");
+      
+        specSig["XLXI_1FilterInPrev_SPECSIG"]=new Array("XLXI_1/FilterInPrev");
+      
+        specSig["XLXI_1FilterCount7_SPECSIG"]=new Array("XLXI_1/FilterCount<7>");
+      
+        specSig["XLXI_1FilterCount6_SPECSIG"]=new Array("XLXI_1/FilterCount<6>");
+      
+        specSig["XLXI_1FilterCount5_SPECSIG"]=new Array("XLXI_1/FilterCount<5>");
+      
+        specSig["XLXI_1FilterCount4_SPECSIG"]=new Array("XLXI_1/FilterCount<4>");
+      
+        specSig["XLXI_1FilterCount3_SPECSIG"]=new Array("XLXI_1/FilterCount<3>");
+      
+        specSig["XLXI_1FilterCount2_SPECSIG"]=new Array("XLXI_1/FilterCount<2>");
+      
+        specSig["XLXI_1FilterCount1_SPECSIG"]=new Array("XLXI_1/FilterCount<1>");
+      
+        specSig["XLXI_1FilterCount0_SPECSIG"]=new Array("XLXI_1/FilterCount<0>");
+      
+        specSig["XLXI_1_xor0001_SPECSIG"]=new Array("XLXI_1/_xor0001");
+      
+        specSig["DFFS_SPECSIG"]=new Array("DFF/S");
+      
+        specSig["XLXI_1FilterCount15_SPECSIG"]=new Array("XLXI_1/FilterCount<15>");
+      
+        specSig["XLXI_2counter_2__or0000_SPECSIG"]=new Array("XLXI_2/counter_2__or0000");
+      
+        specSig["XLXI_2counter_0__or0000_SPECSIG"]=new Array("XLXI_2/counter_0__or0000");
+      
+        specSig["XLXI_2counter_3__or0000_SPECSIG"]=new Array("XLXI_2/counter_3__or0000");
+      
+        specSig["XLXI_2counter_1__or0000_SPECSIG"]=new Array("XLXI_2/counter_1__or0000");
+      
+        specSig["XLXI_2counter3_SPECSIG"]=new Array("XLXI_2/counter<3>");
+      
+        specSig["XLXI_2counter1_SPECSIG"]=new Array("XLXI_2/counter<1>");
+      
+        specSig["XLXI_2counter0_SPECSIG"]=new Array("XLXI_2/counter<0>");
+      
+        specSig["XLXI_2counter2_SPECSIG"]=new Array("XLXI_2/counter<2>");
+      
+            pterms["FB1_0"]=new Array("/XLXI_1_xor0001_SPECSIG","/XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG");
+          
+            pterms["FB1_1"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","/XLXI_1FilterCount1_SPECSIG");
+          
+            pterms["FB1_2"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount2_SPECSIG");
+          
+            pterms["FB1_3"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG");
+          
+            pterms["FB1_4"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount3_SPECSIG");
+          
+            pterms["FB1_5"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG");
+          
+            pterms["FB1_6"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount4_SPECSIG");
+          
+            pterms["FB1_7"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG");
+          
+            pterms["FB1_8"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount5_SPECSIG");
+          
+            pterms["FB1_9"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG");
+          
+            pterms["FB1_10"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount6_SPECSIG");
+          
+            pterms["FB1_11"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG");
+          
+            pterms["FB1_12"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount7_SPECSIG");
+          
+            pterms["FB1_13"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG");
+          
+            pterms["FB1_14"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount8_SPECSIG");
+          
+            pterms["FB1_15"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG");
+          
+            pterms["FB1_16"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB1_17"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG");
+          
+            pterms["FB1_18"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount10_SPECSIG");
+          
+            pterms["FB1_19"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB1_20"]=new Array("XLXI_1FilterCount11_SPECSIG","XLXI_1_xor0001_SPECSIG");
+          
+            pterms["FB1_21"]=new Array("/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB1_22"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount12_SPECSIG");
+          
+            pterms["FB1_23"]=new Array("XLXI_1FilterCount11_SPECSIG","/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB1_24"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount13_SPECSIG");
+          
+            pterms["FB1_25"]=new Array("XLXI_1FilterCount11_SPECSIG","/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG","XLXI_1FilterCount12_SPECSIG");
+          
+            pterms["FB1_26"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount14_SPECSIG");
+          
+            pterms["FB1_27"]=new Array("XLXI_1FilterCount11_SPECSIG","/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG","XLXI_1FilterCount12_SPECSIG","XLXI_1FilterCount13_SPECSIG");
+          
+            pterms["FB1_55"]=new Array("/XLXI_1_xor0001_SPECSIG","/XLXI_1FilterCount0_SPECSIG");
+          
+            pterms["FB2_0"]=new Array("XLXI_2counter1_SPECSIG","/XLXI_2counter2_SPECSIG","XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_1"]=new Array("/XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_2"]=new Array("XLXI_2counter1_SPECSIG","/XLXI_2counter0_SPECSIG","XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_3"]=new Array("/XLXI_2counter1_SPECSIG","/XLXI_2counter2_SPECSIG");
+          
+            pterms["FB2_4"]=new Array("XLXN_1");
+          
+            pterms["FB2_5"]=new Array("/XLXI_2counter_3__or0000_SPECSIG");
+          
+            pterms["FB2_6"]=new Array("/Load","D1_SPECSIG");
+          
+            pterms["FB2_7"]=new Array("/XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_8"]=new Array("XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_9"]=new Array("/XLXI_2counter1_SPECSIG","/XLXI_2counter0_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_10"]=new Array("/XLXI_2counter2_SPECSIG");
+          
+            pterms["FB2_11"]=new Array("XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_12"]=new Array("XLXI_2counter0_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_13"]=new Array("/XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","/XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_14"]=new Array("/XLXI_2counter1_SPECSIG","/XLXI_2counter0_SPECSIG","XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_15"]=new Array("/Load","/D1_SPECSIG");
+          
+            pterms["FB2_16"]=new Array("XLXI_2counter1_SPECSIG","Load","XLXI_2counter0_SPECSIG");
+          
+            pterms["FB2_17"]=new Array("/XLXI_2counter1_SPECSIG","Load","/XLXI_2counter0_SPECSIG");
+          
+            pterms["FB2_18"]=new Array("/XLXI_2counter1_SPECSIG","Load","/XLXI_2counter2_SPECSIG","XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_19"]=new Array("XLXI_2counter1_SPECSIG","Load","XLXI_2counter0_SPECSIG","XLXI_2counter2_SPECSIG");
+          
+            pterms["FB2_20"]=new Array("/Load","XLXI_2counter3_SPECSIG","/D3_SPECSIG");
+          
+            pterms["FB2_21"]=new Array("/XLXI_2counter1_SPECSIG","Load","XLXI_2counter0_SPECSIG","/XLXI_2counter2_SPECSIG","XLXI_2counter3_SPECSIG");
+          
+            pterms["FB2_22"]=new Array("/Load","/XLXI_2counter3_SPECSIG","D3_SPECSIG");
+          
+            pterms["FB2_23"]=new Array("Load","RESET");
+          
+            pterms["FB2_24"]=new Array("D1_SPECSIG","RESET");
+          
+            pterms["FB2_25"]=new Array("/XLXI_1FilterCount11_SPECSIG","/XLXI_1_xor0001_SPECSIG","/XLXI_1FilterCount12_SPECSIG","/XLXI_1FilterCount13_SPECSIG","/XLXI_1FilterCount14_SPECSIG","/XLXI_1FilterCount15_SPECSIG","/XLXI_1_not000226_SPECSIG");
+          
+            pterms["FB2_26"]=new Array("RESET","D3_SPECSIG");
+          
+            pterms["FB2_27"]=new Array("D0_SPECSIG","RESET");
+          
+            pterms["FB2_28"]=new Array("RESET","D2_SPECSIG");
+          
+            pterms["FB2_29"]=new Array("Clk");
+          
+            pterms["FB2_30"]=new Array("XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount15_SPECSIG");
+          
+            pterms["FB2_31"]=new Array("XLXI_1FilterCount11_SPECSIG","/XLXI_1_xor0001_SPECSIG","XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG","XLXI_1FilterCount12_SPECSIG","XLXI_1FilterCount13_SPECSIG","XLXI_1FilterCount14_SPECSIG");
+          
+            pterms["FB2_32"]=new Array("XLXI_1FilterCount0_SPECSIG","XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB2_33"]=new Array("XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount1_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB2_34"]=new Array("XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount2_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB2_35"]=new Array("XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount3_SPECSIG","XLXI_1FilterCount4_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB2_36"]=new Array("XLXI_1FilterCount10_SPECSIG","XLXI_1FilterCount5_SPECSIG","XLXI_1FilterCount6_SPECSIG","XLXI_1FilterCount7_SPECSIG","XLXI_1FilterCount8_SPECSIG","XLXI_1FilterCount9_SPECSIG");
+          
+            pterms["FB2_37"]=new Array("/Clk","XLXI_1FilterInPrev_SPECSIG");
+          
+            pterms["FB2_38"]=new Array("/Load","D3_SPECSIG");
+          
+            pterms["FB2_39"]=new Array("Clk","/XLXI_1FilterInPrev_SPECSIG");
+          
+            pterms["FB2_53"]=new Array("/XLXI_2counter_1__or0000_SPECSIG");
+          
+            pterms["FB3_0"]=new Array("/Load","/D0_SPECSIG");
+          
+            pterms["FB3_1"]=new Array("Load","XLXI_2counter0_SPECSIG");
+          
+            pterms["FB3_2"]=new Array("/Load","XLXI_2counter2_SPECSIG","/D2_SPECSIG");
+          
+            pterms["FB3_3"]=new Array("/Load","/XLXI_2counter2_SPECSIG","D2_SPECSIG");
+          
+            pterms["FB3_4"]=new Array("XLXN_1");
+          
+            pterms["FB3_5"]=new Array("/XLXI_2counter_2__or0000_SPECSIG");
+          
+            pterms["FB3_6"]=new Array("/Load","D0_SPECSIG");
+          
+            pterms["FB3_7"]=new Array("XLXI_2counter1_SPECSIG","Load","XLXI_2counter0_SPECSIG");
+          
+            pterms["FB3_44"]=new Array("/Load","D2_SPECSIG");
+          
+            pterms["FB3_50"]=new Array("/XLXI_2counter_0__or0000_SPECSIG");
+          
+            pterms["FB5_0"]=new Array("/XLXI_2counter1_SPECSIG","/XLXI_2counter2_SPECSIG","XLXI_2counter3_SPECSIG");
+          
+            pterms["FB5_1"]=new Array("XLXI_2counter1_SPECSIG","/XLXI_2counter0_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB5_2"]=new Array("/XLXI_2counter0_SPECSIG","/XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB7_0"]=new Array("XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB7_1"]=new Array("/XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","/XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB7_2"]=new Array("XLXI_2counter1_SPECSIG","/XLXI_2counter0_SPECSIG","/XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB7_3"]=new Array("/XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","/XLXI_2counter2_SPECSIG");
+          
+            pterms["FB7_4"]=new Array("/XLXI_2counter1_SPECSIG","/XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+            pterms["FB7_5"]=new Array("XLXI_2counter1_SPECSIG","XLXI_2counter0_SPECSIG","XLXI_2counter2_SPECSIG","/XLXI_2counter3_SPECSIG");
+          
+          d2["XLXI_1FilterCount9_SPECSIG"]=new Array("FB1_16","FB1_17");
+          
+              gblclk["XLXI_1FilterCount9_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount9_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount8_SPECSIG"]=new Array("FB1_14","FB1_15");
+          
+              gblclk["XLXI_1FilterCount8_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount8_SPECSIG"]="GND";
+              gblclk["XLXI_1FilterInPrev_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterInPrev_SPECSIG"]="VCC";
+          inreg["XLXI_1FilterInPrev_SPECSIG"]=new Array("Clk");
+        
+          d2["XLXI_1FilterCount14_SPECSIG"]=new Array("FB1_26","FB1_27");
+          
+              gblclk["XLXI_1FilterCount14_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount14_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount7_SPECSIG"]=new Array("FB1_12","FB1_13");
+          
+              gblclk["XLXI_1FilterCount7_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount7_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount13_SPECSIG"]=new Array("FB1_24","FB1_25");
+          
+              gblclk["XLXI_1FilterCount13_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount13_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount6_SPECSIG"]=new Array("FB1_10","FB1_11");
+          
+              gblclk["XLXI_1FilterCount6_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount6_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount5_SPECSIG"]=new Array("FB1_8","FB1_9");
+          
+              gblclk["XLXI_1FilterCount5_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount5_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount4_SPECSIG"]=new Array("FB1_6","FB1_7");
+          
+              gblclk["XLXI_1FilterCount4_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount4_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount3_SPECSIG"]=new Array("FB1_4","FB1_5");
+          
+              gblclk["XLXI_1FilterCount3_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount3_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount2_SPECSIG"]=new Array("FB1_2","FB1_3");
+          
+              gblclk["XLXI_1FilterCount2_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount2_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount12_SPECSIG"]=new Array("FB1_22","FB1_23");
+          
+              gblclk["XLXI_1FilterCount12_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount12_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount11_SPECSIG"]=new Array("FB1_20","FB1_21");
+          
+              gblclk["XLXI_1FilterCount11_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount11_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount10_SPECSIG"]=new Array("FB1_18","FB1_19");
+          
+              gblclk["XLXI_1FilterCount10_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount10_SPECSIG"]="GND";
+          d2["XLXI_1FilterCount1_SPECSIG"]=new Array("FB1_1","FB1_0");
+          
+              gblclk["XLXI_1FilterCount1_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount1_SPECSIG"]="GND";
+          d1["XLXI_1FilterCount0_SPECSIG"]=new Array("FB1_55");
+          
+              gblclk["XLXI_1FilterCount0_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount0_SPECSIG"]="GND";
+          d1["LIGHT3_SPECSIG"]=new Array("FB2_10");
+          
+          d2["LIGHT3_SPECSIG"]=new Array("FB2_0","FB2_1","FB2_2");
+          
+          d2["XLXI_1FilterCount15_SPECSIG"]=new Array("FB2_30","FB2_31");
+          
+              gblclk["XLXI_1FilterCount15_SPECSIG"]=new Array("FilterClk");
+            prld["XLXI_1FilterCount15_SPECSIG"]="GND";
+          d2["LIGHT0_SPECSIG"]=new Array("FB2_13","FB2_14");
+          
+          d2["LIGHT2_SPECSIG"]=new Array("FB2_3","FB2_12","FB2_11");
+          
+          d2["LIGHT1_SPECSIG"]=new Array("FB2_3","FB2_7","FB2_8","FB2_9");
+          
+          d2["XLXN_1"]=new Array("FB2_29");
+          
+              gblclk["XLXN_1"]=new Array("FilterClk");
+            
+          ce["XLXN_1"]=new Array("FB2_25");
+          prld["XLXN_1"]="GND";
+          d2["XLXI_2counter_2__or0000_SPECSIG"]=new Array("FB2_23","FB2_28");
+          
+          d2["XLXI_2counter_0__or0000_SPECSIG"]=new Array("FB2_23","FB2_27");
+          
+          d2["XLXI_2counter_3__or0000_SPECSIG"]=new Array("FB2_23","FB2_26");
+          
+          d2["XLXI_2counter_1__or0000_SPECSIG"]=new Array("FB2_23","FB2_24");
+          
+          d2["XLXI_2counter3_SPECSIG"]=new Array("FB2_20","FB2_22","FB2_19","FB2_21");
+          clkNegs["XLXI_2counter3_SPECSIG"]=1;
+              clk["XLXI_2counter3_SPECSIG"]=new Array("FB2_4");
+              
+              set["XLXI_2counter3_SPECSIG"]=new Array("FB2_38");
+              
+              rst["XLXI_2counter3_SPECSIG"]=new Array("FB2_5");
+              prld["XLXI_2counter3_SPECSIG"]="GND";
+          d2["XLXI_1_xor0001_SPECSIG"]=new Array("FB2_39","FB2_37");
+          
+          d2["XLXI_1_not000226_SPECSIG"]=new Array("FB2_36","FB2_32","FB2_33","FB2_34","FB2_35");
+          
+          d2["XLXI_2counter1_SPECSIG"]=new Array("FB2_15","FB2_16","FB2_17","FB2_18");
+          clkNegs["XLXI_2counter1_SPECSIG"]=1;
+              clk["XLXI_2counter1_SPECSIG"]=new Array("FB2_4");
+              
+              set["XLXI_2counter1_SPECSIG"]=new Array("FB2_6");
+              
+              rst["XLXI_2counter1_SPECSIG"]=new Array("FB2_53");
+              prld["XLXI_2counter1_SPECSIG"]="GND";
+          d2["XLXI_2counter2_SPECSIG"]=new Array("FB3_7","FB3_2","FB3_3");
+          clkNegs["XLXI_2counter2_SPECSIG"]=1;
+              clk["XLXI_2counter2_SPECSIG"]=new Array("FB3_4");
+              
+              set["XLXI_2counter2_SPECSIG"]=new Array("FB3_44");
+              
+              rst["XLXI_2counter2_SPECSIG"]=new Array("FB3_5");
+              prld["XLXI_2counter2_SPECSIG"]="GND";
+          d2["XLXI_2counter0_SPECSIG"]=new Array("FB3_1","FB3_0");
+          clkNegs["XLXI_2counter0_SPECSIG"]=1;
+              clk["XLXI_2counter0_SPECSIG"]=new Array("FB3_4");
+              
+              set["XLXI_2counter0_SPECSIG"]=new Array("FB3_6");
+              
+              rst["XLXI_2counter0_SPECSIG"]=new Array("FB3_50");
+              prld["XLXI_2counter0_SPECSIG"]="GND";
+          d2["LIGHT4_SPECSIG"]=new Array("FB5_1","FB5_0","FB5_2");
+          
+          d2["LIGHT5_SPECSIG"]=new Array("FB7_0","FB7_2","FB7_1");
+          
+          d2["LIGHT6_SPECSIG"]=new Array("FB7_3","FB7_4","FB7_5");
+          
+          d2["LIGHT7_SPECSIG"]=new Array("GND");
+          
+
+      uimSignals = new Array();
+
+      uimSigNegs = new Array();
+
+      uimPterms = new Array();
+      
+
+      
+        function getEqnList() {
+          var str = "<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>";
+          str += "<center><h3>Equations</h3></center>";
+          str += "<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>";
+          for (s=0; s<uimSignals.length; s++) {
+            str += "<tr><td>";
+            str += retUimEqn(uimSignals[s]);
+            str += "</td></tr>";
+          }
+          for (s=0; s<signals.length; s++) {
+            str += "<tr><td>";
+            str += retEqn(signals[s]);
+            str += "</td></tr>";
+          }
+
+          var legend = retLegend();
+		      if (legend != "") {
+		        str += "<tr><td>" + legend + "</td></tr>";
+		      }
+
+          str += "</table>";
+          str += "<form><span class='pgRef'>";
+
+          if (!parent.leftnav.IsNS()) {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><input type='button' value='back to top' ";
+            str += "onclick='javascript:parent.leftnav.showEqnAll()' ";
+            str += "onmouseover=\"window.status='goto top of page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<input type='button' value='print page' ";
+            str += "onclick='javascript:window.print()' ";
+            str += "onmouseover=\"window.status='print page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+          else {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><a href='javascript:parent.leftnav.showEqnAll()'>back to top</a>";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<a href='javascript:window.print()'>";
+            str += "print page</a>";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+
+          str += "</span></form>";
+          str += "</body></html>";
+          return str;
+        }
+      
+    </script>
+</head></html>
